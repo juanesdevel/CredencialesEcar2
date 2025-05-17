@@ -1,0 +1,114 @@
+﻿@model IEnumerable<ECARTemplate.Models.Empleado>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>Empleados ECAR</h1>
+
+
+<p>
+    <a asp-action="Create" class="btn btn-success btn-sm">Crear Nuevo</a>
+    <button onclick="location.reload();" class="btn btn-primary btn-sm">Mostrar todos</button>
+</p>
+
+<div class="form-group">
+    <label for="searchString" class="control-label">Buscar:</label>
+    <input type="text" id="searchString" name="searchString" class="form-control" placeholder="Buscar por Código o Nombre" value="@ViewData["CurrentFilter"]" />
+    <div id="resultadosBusqueda">
+        <table class="table px-0">
+            <thead>
+                <tr>
+                    <th>
+                        <h4>Código</h4>
+                    </th>
+                    <th>
+                        <h4>Nombre</h4>
+                    </th>
+                    <th>
+                        <h4>Firma BPM</h4>
+                    </th>
+                    <th>
+                        <h4>Estado</h4>
+                    </th>
+                    <th>
+                        <h4>Acciones</h4>
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="tablaEmpleadosBody">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CodigoEmpleadoEcar)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NombreEmpleado)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FirmaBpm)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Estado)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Editar</a> |
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Detalles</a> |
+                            @if (item.Estado == "Activo")
+                            {
+                                <a asp-action="Desactivar" asp-route-id="@item.Id" class="btn btn-secondary btn-sm">Inactivar</a>
+                            }
+                            else
+                            {
+                                <a asp-action="Activar" asp-route-id="@item.Id" class="btn btn-success btn-sm">Activar</a>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section ScriptsBlock {
+    <script>
+        $(document).ready(function () {
+            $('#searchString').on('input', function () {
+                var searchString = $(this).val();
+                $.ajax({
+                    url: '@Url.Action("BuscarEmpleados", "Empleados")',
+                    type: 'GET',
+                    data: { term: searchString }, // Cambiado a 'term' para coincidir con la acción del controlador
+                    success: function (data) {
+        var resultadosHTML = '<table class="table"><thead><tr><th><h4>Código</h4></th><th><h4>Nombre</h4></th><th><h4>Firma BPM</h4></th><th><h4>Estado</h4></th><th><h4>Acción</h4></th></tr></thead><tbody>';
+                                if (data && data.length > 0) {
+                            $.each(data, function (i, empleado) {
+                                resultadosHTML += '<tr>' +
+                                    '<td>' + empleado.codigoEmpleadoEcar + '</td>' +
+                                    '<td>' + empleado.nombreEmpleado + '</td>' +
+                                    '<td>' + empleado.firmaBpm + '</td>' +
+                                    '<td>' + empleado.estado + '</td>' +
+                                    '<td>' +    
+                                  '<a href="/Empleado/Edit/' + empleado.id + '" class="btn btn-primary btn-sm">Editar</a> | ' +
+                                    '<a href="/Empleado/Details/' + empleado.id + '" class="btn btn-warning btn-sm">Detalles</a> | ' +
+                                     (empleado.estado == "Activo"
+                                        ? '<a href="/Empleado/Desactivar/' + empleado.id + '" class="btn btn-secondary btn-sm">Inactivar</a>'
+                                        : '<a href="/Empleado/Activar/' + empleado.id + '" class="btn btn-success btn-sm">Activar</a>'
+                                    ) +
+                                    '</tr>';
+                            });
+                        } else {
+                            resultadosHTML += '<tr><td colspan="5">No se encontraron resultados</td></tr>'; // Mensaje si no hay resultados
+                        }
+                        resultadosHTML += '</tbody></table>'; // Cierre de la tabla
+                        $('#resultadosBusqueda').html(resultadosHTML); // Actualiza el contenido del div
+                    },
+                    error: function (error) {
+                        console.error('Error al realizar la búsqueda:', error);
+                        alert('Error al realizar la búsqueda de empleados.');
+                    }
+                });
+            });
+        });
+    </script>
+}

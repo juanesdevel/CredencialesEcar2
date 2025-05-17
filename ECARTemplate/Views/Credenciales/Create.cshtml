@@ -1,0 +1,81 @@
+﻿@model ECARTemplate.Models.Credencial
+
+@{
+    ViewData["Title"] = "Crear Credencial";
+}
+
+<div class="container">
+    <h1 class="text-center mb-4">Crear Credencial</h1>
+
+    <div class="row justify-content-center px-0">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-light">
+                    <h4 class="mb-0">Nueva Credencial</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="mb-3">
+                            <label asp-for="CodigoEquipo" class="control-label"></label>
+                            <input asp-for="CodigoEquipo" class="form-control" />
+                            <span asp-validation-for="CodigoEquipo" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="FechaYHora" class="control-label"></label>
+                            <input asp-for="FechaYHora" class="form-control" value="@Model.FechaYHora" />
+                            <span asp-validation-for="FechaYHora" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="CodigoUsuarioEcar" class="control-label"></label>
+                            <input asp-for="CodigoUsuarioEcar" class="form-control" />
+                            <span asp-validation-for="CodigoUsuarioEcar" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="NombreUsuario" class="control-label"></label>
+                            <input asp-for="NombreUsuario" class="form-control" />
+                            <span asp-validation-for="NombreUsuario" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Perfil" class="control-label"></label>
+                            <input asp-for="Perfil" class="form-control" />
+                            <span asp-validation-for="Perfil" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Usuario" class="control-label"></label>
+                            <input asp-for="Usuario" class="form-control" />
+                            <span asp-validation-for="Usuario" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Contrasena" class="control-label"></label>
+                            <input asp-for="Contrasena" class="form-control" />
+                            <span asp-validation-for="Contrasena" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Estado" class="control-label"></label>
+                            <input asp-for="Estado" class="form-control" />
+                            <span asp-validation-for="Estado" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="UsuarioRegistro" class="control-label"></label>
+                            <input asp-for="UsuarioRegistro" class="form-control" />
+                            <span asp-validation-for="UsuarioRegistro" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group text-center mt-4">
+                            <button type="submit" class="btn btn-primary">Crear</button>
+                            <a asp-action="Index" class="btn btn-secondary ms-2">Volver a la Lista</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section ScriptsBlock {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

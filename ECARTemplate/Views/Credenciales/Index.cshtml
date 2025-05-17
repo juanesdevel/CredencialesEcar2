@@ -1,0 +1,165 @@
+﻿@model IEnumerable<ECARTemplate.Models.Credencial>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Credenciales</h1>
+
+<p>
+    <a class="btn btn-success btn-sm" asp-action="Create">Crear Nuevo</a>
+</p>
+<div class="card mb-3">
+    <div class="card-header py-2">
+        <h6 class="mb-0">Filtro Avanzado</h6>
+    </div>
+    <div class="card-body py-2">
+        <form asp-action="Index" method="get">
+            <div class="row gx-2 align-items-end">
+                <div class="col-md-3">
+                    <div class="form-group mb-2">
+                        <label for="codigoEquipoFiltro" class="form-label-sm">Código Equipo:</label>
+                        <input type="text" class="form-control form-control-sm" id="codigoEquipoFiltro" name="codigoEquipoFiltro" value="@ViewBag.CodigoEquipoFiltro" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group mb-2">
+                        <label for="fechaYHoraDesdeFiltro" class="form-label-sm">Fecha Desde:</label>
+                        <input type="date" class="form-control form-control-sm" id="fechaYHoraDesdeFiltro" name="fechaYHoraDesdeFiltro" value="@ViewBag.FechaYHoraDesdeFiltro?.ToString("yyyy-MM-dd")" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group mb-2">
+                        <label for="fechaYHoraHastaFiltro" class="form-label-sm">Fecha Hasta:</label>
+                        <input type="date" class="form-control form-control-sm" id="fechaYHoraHastaFiltro" name="fechaYHoraHastaFiltro" value="@ViewBag.FechaYHoraHastaFiltro?.ToString("yyyy-MM-dd")" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group mb-2">
+                        <label for="codigoUsuarioEcarFiltro" class="form-label-sm">Código Usuario Ecar:</label>
+                        <input type="text" class="form-control form-control-sm" id="codigoUsuarioEcarFiltro" name="codigoUsuarioEcarFiltro" value="@ViewBag.CodigoUsuarioEcarFiltro" />
+                    </div>
+                </div>
+            </div>
+            <div class="row gx-2 align-items-end">
+                <div class="col-md-3">
+                    <div class="form-group mb-2">
+                        <label for="nombreUsuarioFiltro" class="form-label-sm">Nombre Usuario:</label>
+                        <input type="text" class="form-control form-control-sm" id="nombreUsuarioFiltro" name="nombreUsuarioFiltro" value="@ViewBag.NombreUsuarioFiltro" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group mb-2">
+                        <label for="perfilFiltro" class="form-label-sm">Perfil:</label>
+                        <input type="text" class="form-control form-control-sm" id="perfilFiltro" name="perfilFiltro" value="@ViewBag.PerfilFiltro" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group mb-2">
+                        <label for="usuarioFiltro" class="form-label-sm">Usuario:</label>
+                        <input type="text" class="form-control form-control-sm" id="usuarioFiltro" name="usuarioFiltro" value="@ViewBag.UsuarioFiltro" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group mb-2">
+                        <label for="estadoFiltro" class="form-label-sm">Estado:</label>
+                        <input type="text" class="form-control form-control-sm" id="estadoFiltro" name="estadoFiltro" value="@ViewBag.EstadoFiltro" />
+                    </div>
+                </div>
+            </div>
+            <div class="row gx-2 align-items-end">
+                <div class="col-md-3">
+                    <div class="form-group mb-2">
+                        <label for="usuarioRegistroFiltro" class="form-label-sm">Usuario Registro:</label>
+                        <input type="text" class="form-control form-control-sm" id="usuarioRegistroFiltro" name="usuarioRegistroFiltro" value="@ViewBag.UsuarioRegistroFiltro" />
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="form-group mt-2">
+                        <button type="submit" class="btn btn-primary btn-sm">Filtrar</button>
+                        <a asp-action="Index" class="btn btn-secondary btn-sm ms-2">Limpiar Filtros</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+				<h4>Código Equipo</h4>
+            </th>
+            <th>
+				<h4>Fecha y Hora</h4>
+            </th>
+            <th>
+				<h4>Código Usuario</h4>
+            </th>
+            <th>
+                <h4>Nombre Usuario</h4>   
+            </th>
+            <th>
+				<h4>Perfil</h4>  
+            </th>
+            <th>
+				<h4>Usuario</h4>
+            </th>
+            <th>
+				<h4>Contraseña</h4>
+            </th>
+            <th>
+				<h4>Estado</h4>
+            </th>
+            <th>
+                <h4>Acciones</h4>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CodigoEquipo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaYHora)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CodigoUsuarioEcar)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreUsuario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Perfil)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Usuario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Contrasena)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Estado)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Detalles</a> |
+                    @if (item.Estado == "Activo")
+                    {
+                        <a asp-action="Desactivar" asp-route-id="@item.Id" class="btn btn-secondary btn-sm">Inactivar</a>
+                    }
+                    else
+                    {
+                        <a asp-action="Activar" asp-route-id="@item.Id" class="btn btn-success btn-sm">Activar</a>
+                    }
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

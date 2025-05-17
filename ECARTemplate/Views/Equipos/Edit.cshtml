@@ -1,0 +1,75 @@
+﻿@model ECARTemplate.Models.Equipo
+
+@{
+    ViewData["Title"] = "Editar Equipo";
+}
+
+<div class="container">
+    <h1 class="text-center mb-4">Editar Equipo</h1>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-light">
+                    <h4 class="mb-0">Equipo</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Edit">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="Id" />
+
+                        <div class="mb-3">
+                            <label asp-for="CodigoEquipo" class="control-label"></label>
+                            <input asp-for="CodigoEquipo" class="form-control" readonly />
+                            <span asp-validation-for="CodigoEquipo" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="NombreEquipo" class="control-label"></label>
+                            <input asp-for="NombreEquipo" class="form-control" />
+                            <span asp-validation-for="NombreEquipo" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Sede" class="control-label"></label>
+                            <input asp-for="Sede" class="form-control" />
+                            <span asp-validation-for="Sede" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Area" class="control-label"></label>
+                            <input asp-for="Area" class="form-control" />
+                            <span asp-validation-for="Area" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="SubArea" class="control-label"></label>
+                            <input asp-for="SubArea" class="form-control" />
+                            <span asp-validation-for="SubArea" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Nota" class="control-label"></label>
+                            <textarea asp-for="Nota" class="form-control"></textarea>
+                            <span asp-validation-for="Nota" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Estado" class="control-label"></label>
+                            <select asp-for="Estado" class="form-control">
+                                <option value="Activo">Activo</option>
+                                <option value="Inactivo">Inactivo</option>
+                            </select>
+                            <span asp-validation-for="Estado" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group text-center mt-4">
+                            <button type="submit" class="btn btn-success">Guardar</button>
+                            <a asp-action="Index" class="btn btn-secondary ms-2">Volver a la lista</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section ScriptsBlock {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

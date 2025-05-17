@@ -1,0 +1,91 @@
+﻿@model ECARTemplate.Models.Empleado
+
+@{
+    ViewData["Title"] = "Crear Empleado";
+}
+
+<div class="container">
+    <h1 class="text-center mb-4">Crear Empleado</h1>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-light">
+                    <h4 class="mb-0">Nuevo Empleado</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="mb-3">
+                            <label asp-for="CodigoEmpleadoEcar" class="control-label"></label>
+                            <input asp-for="CodigoEmpleadoEcar" class="form-control" />
+                            <span asp-validation-for="CodigoEmpleadoEcar" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Fecha" class="control-label"></label>
+                            <input asp-for="Fecha" class="form-control" />
+                            <span asp-validation-for="Fecha" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="NombreEmpleado" class="control-label"></label>
+                            <input asp-for="NombreEmpleado" class="form-control" />
+                            <span asp-validation-for="NombreEmpleado" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Cargo" class="control-label"></label>
+                            <input asp-for="Cargo" class="form-control" />
+                            <span asp-validation-for="Cargo" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Area" class="control-label"></label>
+                            <input asp-for="Area" class="form-control" />
+                            <span asp-validation-for="Area" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="SubArea" class="control-label"></label>
+                            <input asp-for="SubArea" class="form-control" />
+                            <span asp-validation-for="SubArea" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Nota" class="control-label"></label>
+                            <textarea asp-for="Nota" class="form-control"></textarea>
+                            <span asp-validation-for="Nota" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Estado" class="control-label"></label>
+                            <input asp-for="Estado" class="form-control" />
+                            <span asp-validation-for="Estado" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="UsuarioRegistro" class="control-label"></label>
+                            <input asp-for="UsuarioRegistro" class="form-control" />
+                            <span asp-validation-for="UsuarioRegistro" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="FirmaBpm" class="control-label"></label>
+                            <input asp-for="FirmaBpm" class="form-control" />
+                            <span asp-validation-for="FirmaBpm" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="FechaModificacion" class="control-label"></label>
+                            <input asp-for="FechaModificacion" class="form-control" />
+                            <span asp-validation-for="FechaModificacion" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group text-center mt-4">
+                            <button type="submit" class="btn btn-primary">Crear</button>
+                            <a asp-action="Index" class="btn btn-secondary ms-2">Volver a la Lista</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section ScriptsBlock {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
