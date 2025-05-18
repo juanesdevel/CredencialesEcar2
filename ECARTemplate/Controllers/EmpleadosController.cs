@@ -1,26 +1,67 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 using ECARTemplate.Models;
 using ECARTemplate.Data;
 using Microsoft.AspNetCore.Authorization;
-
+using System;
 
 namespace ECARTemplate.Controllers
-{
-    [Authorize(AuthenticationSchemes = "Custom")]
-
-    public class EmpleadosController : Controller // Este controlador podría renombrarse a EmpleadosController
     {
-        private readonly ApplicationDbContext _context;
-
-        public EmpleadosController(ApplicationDbContext context)
+        [Authorize(AuthenticationSchemes = "Custom")]
+        public class EmpleadosController : Controller
         {
-            _context = context;
-        }
-        // GET: Empleado
-        public async Task<IActionResult> Index(string searchString)
+            private readonly ApplicationDbContext _context;
+
+            public EmpleadosController(ApplicationDbContext context)
+            {
+                _context = context;
+            }
+
+            [HttpGet]
+            public async Task<IActionResult> ObtenerDatosUsuario(string codigoEmpleadoEcar)
+            {
+                try
+                {
+                    // Log para depuración
+                    Console.WriteLine($"Buscando empleado con código: {codigoEmpleadoEcar}");
+
+                    if (string.IsNullOrEmpty(codigoEmpleadoEcar))
+                    {
+                        return Json(new { success = false, message = "El Código de Empleado es requerido." });
+                    }
+
+                    var empleado = await _context.Empleados
+                        .Where(e => e.CodigoEmpleadoEcar == codigoEmpleadoEcar)
+                        .Select(e => new
+                        {
+                            codigoUsuarioEcar = e.CodigoEmpleadoEcar, // Cambiamos a camelCase para consistencia JSON
+                            nombreEmpleado = e.NombreEmpleado,        // Cambiamos a camelCase para consistencia JSON
+                            usuario = e.FirmaBpm                     // Cambiamos a camelCase para consistencia JSON
+                        })
+                        .FirstOrDefaultAsync();
+
+                    if (empleado == null)
+                    {
+                        Console.WriteLine("No se encontró empleado con ese código");
+                        return Json(new { success = false, message = "No se encontró ningún empleado con ese código." });
+                    }
+
+                    Console.WriteLine($"Empleado encontrado: {empleado.nombreEmpleado}");
+                    return Json(new { success = true, data = empleado });
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error al buscar empleado: {ex.Message}");
+                    return Json(new { success = false, message = $"Error: {ex.Message}" });
+                }
+            }
+
+
+            // GET: Empleado
+            public async Task<IActionResult> Index(string searchString)
         {
             ViewData["CurrentFilter"] = searchString;
 

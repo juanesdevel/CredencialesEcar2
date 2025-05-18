@@ -8,8 +8,8 @@
             ]
         },
         {
-            "title": "Login",
-            "href": "/Page/login",
+            "title": "Módulos",
+            "href": "#",
             "icon": "fal fa-desktop",
             "roles": [
                 "Custom"

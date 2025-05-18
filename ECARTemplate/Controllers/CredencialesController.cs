@@ -250,6 +250,34 @@ namespace ECARTemplate.Controllers
         {
             return _context.Credenciales.Any(e => e.Id == id);
         }
+        [HttpGet]
+        public async Task<IActionResult> ObtenerDatosUsuario(string codigoEmpleadoEcar)
+        {
+            if (string.IsNullOrEmpty(codigoEmpleadoEcar))
+            {
+                return Json(new { success = false, message = "El Código de Usuario es requerido." });
+            }
+
+            var empleado = await _context.Empleados
+                .Where(e => e.CodigoEmpleadoEcar == codigoEmpleadoEcar)
+                .Select(e => new
+                {
+                    e.CodigoEmpleadoEcar,
+                    e.NombreEmpleado,
+                    Usuario = e.FirmaBpm // Asignamos FirmaBpm al campo Usuario
+                })
+                .FirstOrDefaultAsync();
+
+            if (empleado == null)
+            {
+                return Json(new { success = false, message = "No se encontró ningún empleado con ese código." });
+            }
+
+            return Json(new { success = true, data = empleado });
+        }
+
+       
+
 
     }
 }
