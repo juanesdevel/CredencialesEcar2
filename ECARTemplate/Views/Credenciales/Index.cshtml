@@ -18,8 +18,25 @@
             <div class="row gx-2 align-items-end">
                 <div class="col-md-3">
                     <div class="form-group mb-2">
+                        <label for="codigoUsuarioEcarFiltro" class="form-label-sm">Código Empleado:</label>
+                        <input type="text" class="form-control form-control-sm" id="codigoUsuarioEcarFiltro" name="codigoUsuarioEcarFiltro" value="@ViewBag.CodigoUsuarioEcarFiltro" />
+                    </div>
+                    
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group mb-2">
                         <label for="codigoEquipoFiltro" class="form-label-sm">Código Equipo:</label>
                         <input type="text" class="form-control form-control-sm" id="codigoEquipoFiltro" name="codigoEquipoFiltro" value="@ViewBag.CodigoEquipoFiltro" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group mb-2">
+                        <label for="estadoFiltro">Estado:</label>
+                        <select class="form-control" id="estadoFiltro" name="estadoFiltro">
+                            <option value="">Todos</option>
+                            <option value="Activo" selected="@(ViewBag.EstadoFiltro == "Activo")">Activo</option>
+                            <option value="Inactivo" selected="@(ViewBag.EstadoFiltro == "Inactivo")">Inactivo</option>
+                        </select>
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -27,24 +44,13 @@
                         <label for="fechaYHoraDesdeFiltro" class="form-label-sm">Fecha Desde:</label>
                         <input type="date" class="form-control form-control-sm" id="fechaYHoraDesdeFiltro" name="fechaYHoraDesdeFiltro" value="@ViewBag.FechaYHoraDesdeFiltro?.ToString("yyyy-MM-dd")" />
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-group mb-2">
-                        <label for="fechaYHoraHastaFiltro" class="form-label-sm">Fecha Hasta:</label>
-                        <input type="date" class="form-control form-control-sm" id="fechaYHoraHastaFiltro" name="fechaYHoraHastaFiltro" value="@ViewBag.FechaYHoraHastaFiltro?.ToString("yyyy-MM-dd")" />
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-group mb-2">
-                        <label for="codigoUsuarioEcarFiltro" class="form-label-sm">Código Usuario Ecar:</label>
-                        <input type="text" class="form-control form-control-sm" id="codigoUsuarioEcarFiltro" name="codigoUsuarioEcarFiltro" value="@ViewBag.CodigoUsuarioEcarFiltro" />
-                    </div>
+                    
                 </div>
             </div>
             <div class="row gx-2 align-items-end">
                 <div class="col-md-3">
                     <div class="form-group mb-2">
-                        <label for="nombreUsuarioFiltro" class="form-label-sm">Nombre Usuario:</label>
+                        <label for="nombreUsuarioFiltro" class="form-label-sm">Nombre Empleado:</label>
                         <input type="text" class="form-control form-control-sm" id="nombreUsuarioFiltro" name="nombreUsuarioFiltro" value="@ViewBag.NombreUsuarioFiltro" />
                     </div>
                 </div>
@@ -62,18 +68,13 @@
                 </div>
                 <div class="col-md-3">
                     <div class="form-group mb-2">
-                        <label for="estadoFiltro" class="form-label-sm">Estado:</label>
-                        <input type="text" class="form-control form-control-sm" id="estadoFiltro" name="estadoFiltro" value="@ViewBag.EstadoFiltro" />
+                        <label for="fechaYHoraHastaFiltro" class="form-label-sm">Fecha Hasta:</label>
+                        <input type="date" class="form-control form-control-sm" id="fechaYHoraHastaFiltro" name="fechaYHoraHastaFiltro" value="@ViewBag.FechaYHoraHastaFiltro?.ToString("yyyy-MM-dd")" />
                     </div>
+                    
                 </div>
             </div>
             <div class="row gx-2 align-items-end">
-                <div class="col-md-3">
-                    <div class="form-group mb-2">
-                        <label for="usuarioRegistroFiltro" class="form-label-sm">Usuario Registro:</label>
-                        <input type="text" class="form-control form-control-sm" id="usuarioRegistroFiltro" name="usuarioRegistroFiltro" value="@ViewBag.UsuarioRegistroFiltro" />
-                    </div>
-                </div>
                 <div class="col-md-9">
                     <div class="form-group mt-2">
                         <button type="submit" class="btn btn-primary btn-sm">Filtrar</button>
@@ -84,7 +85,6 @@
         </form>
     </div>
 </div>
-
 <table class="table">
     <thead>
         <tr>
@@ -99,10 +99,7 @@
             </th>
             <th>
                 <h4>Nombre Usuario</h4>   
-            </th>
-            <th>
-				<h4>Perfil</h4>  
-            </th>
+            </th>           
             <th>
 				<h4>Usuario</h4>
             </th>
@@ -133,9 +130,6 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.NombreUsuario)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Perfil)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Usuario)
