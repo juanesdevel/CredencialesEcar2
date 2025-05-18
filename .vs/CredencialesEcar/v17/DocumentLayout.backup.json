@@ -3,32 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|c:\\users\\juan g\\desktop\\credencialesecar\\ecartemplate\\views\\credenciales\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|solutionrelative:ecartemplate\\views\\credenciales\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|c:\\users\\juan g\\desktop\\credencialesecar\\ecartemplate\\views\\credenciales\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|solutionrelative:ecartemplate\\views\\credenciales\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|c:\\users\\juan g\\desktop\\credencialesecar\\ecartemplate\\controllers\\credencialescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|solutionrelative:ecartemplate\\controllers\\credencialescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|c:\\users\\juan g\\desktop\\credencialesecar\\ecartemplate\\views\\usuariosti\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|solutionrelative:ecartemplate\\views\\usuariosti\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|c:\\users\\juan g\\desktop\\credencialesecar\\ecartemplate\\controllers\\empleadoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|solutionrelative:ecartemplate\\controllers\\empleadoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|c:\\users\\juan g\\desktop\\credencialesecar\\ecartemplate\\views\\equipos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|solutionrelative:ecartemplate\\views\\equipos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|c:\\users\\juan g\\desktop\\credencialesecar\\ecartemplate\\controllers\\credencialescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|solutionrelative:ecartemplate\\controllers\\credencialescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|c:\\users\\juan g\\desktop\\credencialesecar\\ecartemplate\\views\\empleados\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|solutionrelative:ecartemplate\\views\\empleados\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|c:\\users\\juan g\\desktop\\credencialesecar\\ecartemplate\\views\\credenciales\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|solutionrelative:ecartemplate\\views\\credenciales\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|c:\\users\\juan g\\desktop\\credencialesecar\\ecartemplate\\models\\empleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|solutionrelative:ecartemplate\\models\\empleado.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|c:\\users\\juan g\\desktop\\credencialesecar\\ecartemplate\\models\\credencial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|solutionrelative:ecartemplate\\models\\credencial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|c:\\users\\juan g\\desktop\\credencialesecar\\ecartemplate\\views\\empleados\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|solutionrelative:ecartemplate\\views\\empleados\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|c:\\users\\juan g\\desktop\\credencialesecar\\ecartemplate\\views\\credenciales\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|solutionrelative:ecartemplate\\views\\credenciales\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|c:\\users\\juan g\\desktop\\credencialesecar\\ecartemplate\\views\\page\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|solutionrelative:ecartemplate\\views\\page\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|c:\\users\\juan g\\desktop\\credencialesecar\\ecartemplate\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|solutionrelative:ecartemplate\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|c:\\users\\juan g\\desktop\\credencialesecar\\ecartemplate\\views\\usuariosti\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|solutionrelative:ecartemplate\\views\\usuariosti\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,19 +62,83 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 9,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Empleado.cs",
+              "DocumentMoniker": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Models\\Empleado.cs",
+              "RelativeDocumentMoniker": "ECARTemplate\\Models\\Empleado.cs",
+              "ToolTip": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Models\\Empleado.cs",
+              "RelativeToolTip": "ECARTemplate\\Models\\Empleado.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAqwEEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T02:31:50.932Z"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Credencial.cs",
+              "DocumentMoniker": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Models\\Credencial.cs",
+              "RelativeDocumentMoniker": "ECARTemplate\\Models\\Credencial.cs",
+              "ToolTip": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Models\\Credencial.cs",
+              "RelativeToolTip": "ECARTemplate\\Models\\Credencial.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T02:20:15.866Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "EmpleadosController.cs",
+              "DocumentMoniker": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Controllers\\EmpleadosController.cs",
+              "RelativeDocumentMoniker": "ECARTemplate\\Controllers\\EmpleadosController.cs",
+              "ToolTip": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Controllers\\EmpleadosController.cs",
+              "RelativeToolTip": "ECARTemplate\\Controllers\\EmpleadosController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T01:17:01.097Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Views\\Credenciales\\Edit.cshtml",
+              "RelativeDocumentMoniker": "ECARTemplate\\Views\\Credenciales\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Views\\Credenciales\\Edit.cshtml",
+              "RelativeToolTip": "ECARTemplate\\Views\\Credenciales\\Edit.cshtml",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-17T23:40:58.291Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Views\\Page\\Login.cshtml",
+              "RelativeDocumentMoniker": "ECARTemplate\\Views\\Page\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Views\\Page\\Login.cshtml",
+              "RelativeToolTip": "ECARTemplate\\Views\\Page\\Login.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-17T23:39:58.672Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "ECARTemplate\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "ECARTemplate\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-17T23:12:22.367Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Views\\UsuariosTI\\Create.cshtml",
               "RelativeDocumentMoniker": "ECARTemplate\\Views\\UsuariosTI\\Create.cshtml",
@@ -58,8 +146,7 @@
               "RelativeToolTip": "ECARTemplate\\Views\\UsuariosTI\\Create.cshtml",
               "ViewState": "AgIAABYAAAAAAAAAAAAqwDcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-17T22:25:53.021Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-17T22:25:53.021Z"
             },
             {
               "$type": "Document",
@@ -69,75 +156,83 @@
               "RelativeDocumentMoniker": "ECARTemplate\\Views\\Equipos\\Create.cshtml",
               "ToolTip": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Views\\Equipos\\Create.cshtml",
               "RelativeToolTip": "ECARTemplate\\Views\\Equipos\\Create.cshtml",
-              "ViewState": "AgIAACUAAAAAAAAAAAAqwEYAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAAAAAEYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-17T22:25:28.606Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Views\\Empleados\\Create.cshtml",
-              "RelativeDocumentMoniker": "ECARTemplate\\Views\\Empleados\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Views\\Empleados\\Create.cshtml",
-              "RelativeToolTip": "ECARTemplate\\Views\\Empleados\\Create.cshtml",
-              "ViewState": "AgIAADkAAAAAAAAAAAAqwFoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-17T22:25:00.216Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-17T22:25:28.606Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Views\\Empleados\\Create.cshtml",
+              "RelativeDocumentMoniker": "ECARTemplate\\Views\\Empleados\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Views\\Empleados\\Create.cshtml",
+              "RelativeToolTip": "ECARTemplate\\Views\\Empleados\\Create.cshtml",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAFoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-17T22:25:00.216Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Views\\Credenciales\\Create.cshtml",
               "RelativeDocumentMoniker": "ECARTemplate\\Views\\Credenciales\\Create.cshtml",
               "ToolTip": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Views\\Credenciales\\Create.cshtml",
               "RelativeToolTip": "ECARTemplate\\Views\\Credenciales\\Create.cshtml",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAqwA0AAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAIIAAAAAAAAAAAAowL0AAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-05-17T22:21:10.292Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Views\\Empleados\\Index.cshtml",
               "RelativeDocumentMoniker": "ECARTemplate\\Views\\Empleados\\Index.cshtml",
               "ToolTip": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Views\\Empleados\\Index.cshtml",
               "RelativeToolTip": "ECARTemplate\\Views\\Empleados\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAAAHAAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-17T22:16:15.721Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-17T22:16:15.721Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Views\\Credenciales\\Index.cshtml",
               "RelativeDocumentMoniker": "ECARTemplate\\Views\\Credenciales\\Index.cshtml",
               "ToolTip": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Views\\Credenciales\\Index.cshtml",
               "RelativeToolTip": "ECARTemplate\\Views\\Credenciales\\Index.cshtml",
-              "ViewState": "AgIAADQAAAAAAAAAAAAqwFUAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACcAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-05-17T22:12:51.271Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "CredencialesController.cs",
               "DocumentMoniker": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Controllers\\CredencialesController.cs",
               "RelativeDocumentMoniker": "ECARTemplate\\Controllers\\CredencialesController.cs",
               "ToolTip": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Controllers\\CredencialesController.cs",
               "RelativeToolTip": "ECARTemplate\\Controllers\\CredencialesController.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAuwFgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAANMAAAAAAAAAAIAzwBYBAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T22:10:40.084Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-17T22:10:40.084Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{c9c0ae26-aa77-11d2-b3f0-0000f87570ee}"
             }
           ]
         }
