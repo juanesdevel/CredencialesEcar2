@@ -16,18 +16,19 @@ namespace ECARTemplate.Controllers
     {
         private readonly ApplicationDbContext _context;
 
+        public string CodigoEquipo { get; private set; }
+
         public EquiposController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Equipos
+        // Simplified member access for LINQ queries to address IDE0037
         public async Task<IActionResult> Index(string searchString)
         {
             ViewData["CurrentFilter"] = searchString;
 
-            var equipos = from e in _context.Equipos
-                          select e;
+            var equipos = _context.Equipos.AsQueryable(); // Simplify member access
 
             if (!string.IsNullOrEmpty(searchString))
             {
@@ -223,6 +224,34 @@ namespace ECARTemplate.Controllers
 
             return Json(equiposFiltrados);
         }
-    } 
+        [HttpGet]
+        public async Task<IActionResult> ObtenerCodigoPorReferencia(string referencia)
+        {
+            if (string.IsNullOrEmpty(referencia))
+            {
+                return Json(new { existe = false, mensaje = "Debe proporcionar un código de equipo." });
+            }
+
+            // Buscar el equipo por código
+            var equipo = await _context.Equipos
+                .FirstOrDefaultAsync(e => e.CodigoEquipo == referencia);
+
+            if (equipo != null)
+            {
+                // Si el equipo existe, devolver sus datos
+                return Json(new
+                {
+                    existe = true,
+                    codigoEquipo = equipo.CodigoEquipo,
+                    nombreEquipo = equipo.NombreEquipo
+                });
+            }
+            else
+            {
+                // Si no existe, devolver un mensaje
+                return Json(new { existe = false, mensaje = "No se encontró ningún equipo con el código especificado." });
+            }
         }
-    
+
+    }
+}
