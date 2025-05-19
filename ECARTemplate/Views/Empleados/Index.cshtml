@@ -23,6 +23,9 @@
                 <thead>
                     <tr>
                         <th>
+                            <h4>Estado</h4>
+                        </th>
+                        <th>
                             <h4>Código</h4>
                         </th>
                         <th>
@@ -30,9 +33,6 @@
                         </th>
                         <th>
                             <h4>Firma BPM</h4>
-                        </th>
-                        <th>
-                            <h4>Estado</h4>
                         </th>
                         <th>
                             <h4>Acciones</h4>
@@ -44,6 +44,20 @@
                     {
                         <tr>
                             <td>
+                                @if (item.Estado == "Activo")
+                                {
+                                    <span class="badge bg-success">Activo</span>
+                                }
+                                else if (item.Estado == "Inactivo")
+                                {
+                                    <span class="badge bg-secondary">Inactivo</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-danger">Desconocido</span>
+                                }
+                            </td>
+                            <td>
                                 @Html.DisplayFor(modelItem => item.CodigoEmpleadoEcar)
                             </td>
                             <td>
@@ -52,9 +66,7 @@
                             <td>
                                 @Html.DisplayFor(modelItem => item.FirmaBpm)
                             </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Estado)
-                            </td>
+                       
                             <td>
                                 <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Editar</a> |
                                 <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Detalles</a> |

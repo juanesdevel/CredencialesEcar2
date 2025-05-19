@@ -1,0 +1,194 @@
+﻿@model ECARTemplate.Models.Credencial
+
+@{
+
+    ViewData
+[
+"Title"
+]
+ 
+=
+ 
+"Clonar Credencial"
+;
+
+}
+
+
+<div class="container">
+    <h1 class="text-center mb-4">Clonar Credencial</h1>
+
+    <div class="row justify-content-center px-0">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header bg-light">
+                    <h4 class="mb-0">Clonar Credencial</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="GuardarClon">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="mb-2 mt-0">
+                            <label asp-for="UsuarioRegistro" class="control-label" hidden>Usuario que registra</label>
+                            <input asp-for="UsuarioRegistro" class="form-control" hidden value="@User?.Identity?.Name" readonly />
+                            <span asp-validation-for="UsuarioRegistro" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-2 mt-0">
+                            <label asp-for="FechaYHora" class="control-label">Fecha de registro</label>
+                            <input asp-for="FechaYHora" class="form-control" id="campoFechaHora" readonly />
+                            <span asp-validation-for="FechaYHora" class="text-danger"></span>
+                        </div>
+                        <div class="mb-2 mt-0">
+                            <label asp-for="CodigoUsuarioEcar" class="control-label">Código Usuario</label>
+                            <input asp-for="CodigoUsuarioEcar" class="form-control" readonly />
+                            <span asp-validation-for="CodigoUsuarioEcar" class="text-danger"></span>
+                        </div>
+                        <div class="mb-2 mt-0">
+                            <label asp-for="NombreUsuario" class="control-label">Nombre Usuario</label>
+                            <input asp-for="NombreUsuario" class="form-control" readonly />
+                            <span asp-validation-for="NombreUsuario" class="text-danger"></span>
+                        </div>
+                        <div class="mb-2 mt-0">
+                            <label asp-for="Usuario" class="control-label">Usuario (Firma BPM)</label>
+                            <input asp-for="Usuario" class="form-control" readonly />
+                            <span asp-validation-for="Usuario" class="text-danger"></span>
+                        </div>
+                        <div class="mb-2 mt-0">
+                            <label asp-for="Perfil" class="control-label">Perfil</label>
+                            <select asp-for="Perfil" class="form-control">
+                                <option value="Operador">Operador</option>
+                                <option value="Administrador">Administrador</option>
+                                <option value="Subadministrador">Subadministrador</option>
+                                <option value="Supervisor">Supervisor</option>
+                                <option value="Validaciones">Validaciones</option>
+                                <option value="Mantenimiento">Mantenimiento</option>
+                            </select>
+                            <span asp-validation-for="Perfil" class="text-danger"></span>
+                        </div>
+                        <div class="mb-2 mt-0">
+                            <label asp-for="Contrasena" class="control-label"></label>
+                            <input asp-for="Contrasena" class="form-control" />
+                            <span asp-validation-for="Contrasena" class="text-danger"></span>
+                        </div>
+                        <div class="mb-2 mt-0">
+                            <label asp-for="Estado" class="control-label" hidden>Estado</label>
+                            <input asp-for="Estado" class="form-control" readonly hidden />
+                            <span asp-validation-for="Estado" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-2 mt-0">
+                            <label asp-for="CodigoEquipo" class="control-label">Código de Equipo</label>
+                            <input asp-for="CodigoEquipo" class="form-control" placeholder="Código del equipo" readonly />
+                            <span asp-validation-for="CodigoEquipo" class="text-danger"></span>
+                        </div>
+                       
+                        <hr class="mb-2" />
+                        <div class="mb-2 mt-0">
+                            <label for="BuscarReferenciaEquipo" class="control-label">Buscar Código Equipo</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Ingrese Referencia a buscar" id="BuscarReferenciaEquipo" />
+                                <button type="button" id="btnBuscarReferenciaEquipo" class="btn btn-outline-primary btn-sm ms-2">Buscar</button>
+                            </div>
+                        </div>
+                      
+                        <div class="form-group text-center mt-4">
+                            <button type="submit" class="btn btn-primary">Guardar Clon</button>
+                            <a asp-action="Index" class="btn btn-secondary ms-2">Volver a la Lista</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section ScriptsBlock {
+    <script>
+        // Función para formatear la fecha y hora en formato compatible con input datetime-local
+        function obtenerFechaHoraFormateada() {
+            const ahora = new Date();
+
+            // Formato YYYY-MM-DDThh:mm
+            const año = ahora.getFullYear();
+            const mes = String(ahora.getMonth() + 1).padStart(2, '0');
+            const dia = String(ahora.getDate()).padStart(2, '0');
+            const hora = String(ahora.getHours()).padStart(2, '0');
+            const minutos = String(ahora.getMinutes()).padStart(2, '0');
+
+            return `${año}-${mes}-${dia}T${hora}:${minutos}`;
+        }
+
+        // Establecer la fecha y hora actual al cargar la página
+        document.addEventListener("DOMContentLoaded", function() {
+            const campoFechaHora = document.getElementById("campoFechaHora");
+            if (campoFechaHora) {
+                // Si el campo está vacío, establecer la fecha y hora actual
+                if (!campoFechaHora.value) {
+                    campoFechaHora.value = obtenerFechaHoraFormateada();
+                }
+
+                // Asegurarnos de que el tipo del input sea datetime-local
+                campoFechaHora.setAttribute("type", "datetime-local");
+            }
+        });
+
+        $(document).ready(function() {
+            // Evento para el botón de buscar equipo
+            $('#btnBuscarReferenciaEquipo').click(function() {
+                buscarEquipoPorCodigo();
+            });
+
+            // Evento para detectar la tecla Enter en el campo de búsqueda
+            $('#BuscarReferenciaEquipo').keypress(function(event) {
+                if (event.which === 13) { // 13 es el código de la tecla Enter
+                    buscarEquipoPorCodigo();
+                    event.preventDefault(); // Prevenir el comportamiento predeterminado del Enter
+                }
+            });
+
+            // Función para realizar la búsqueda del equipo por código
+            function buscarEquipoPorCodigo() {
+                var codigoBusqueda = $('#BuscarReferenciaEquipo').val();
+
+                if (codigoBusqueda) {
+                    // Mostrar mensaje de carga o spinner (opcional)
+                    console.log("Buscando equipo con código: " + codigoBusqueda);
+
+                    $.ajax({
+                        url: '/Equipos/ObtenerCodigoPorReferencia',
+                        type: 'GET',
+                        data: { referencia: codigoBusqueda },
+                        dataType: 'json',
+                        success: function(response) {
+                            console.log("Respuesta del servidor:", response);
+
+                            if (response.existe) {
+                                // Actualizar el campo con el código de equipo encontrado
+                                $('#CodigoEquipo').val(response.codigoEquipo);
+
+                                // Opcional: Mostrar mensaje de éxito
+                                alert("Equipo encontrado: " + response.nombreEquipo);
+                            } else {
+                                // Limpiar el campo
+                                $('#CodigoEquipo').val('');
+                                alert(response.mensaje || "No se encontró ningún equipo con ese código.");
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            console.error("Error en la petición AJAX:", status, error);
+                            console.error("Respuesta:", xhr.responseText);
+                            alert("Ocurrió un error al buscar el equipo.");
+
+                            // Limpiar campo en caso de error
+                            $('#CodigoEquipo').val('');
+                        }
+                    });
+                } else {
+                    $('#CodigoEquipo').val('');
+                    alert("Por favor, ingrese el código del equipo a buscar.");
+                }
+            }
+        });
+    </script>
+}

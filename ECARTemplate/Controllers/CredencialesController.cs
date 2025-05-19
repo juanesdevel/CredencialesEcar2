@@ -289,7 +289,76 @@ namespace ECARTemplate.Controllers
             return Json(new { success = true, data = empleado });
         }
 
-       
+        // GET: Credenciales/Clonar/5
+        public async Task<IActionResult> Clonar(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var credencial = await _context.Credenciales.FindAsync(id);
+            if (credencial == null)
+            {
+                return NotFound();
+            }
+
+            // Creamos un nuevo objeto Credencial con datos del original
+            var credencialClon = new Credencial
+            {
+                // No copiamos el Id, se generará uno nuevo
+                CodigoEquipo = "", // Este campo estará vacío para que el usuario lo llene
+                FechaYHora = DateTime.Now, // Actualizamos la fecha a la actual
+                CodigoUsuarioEcar = credencial.CodigoUsuarioEcar,
+                NombreUsuario = credencial.NombreUsuario,
+                Perfil = credencial.Perfil,
+                Usuario = credencial.Usuario,
+                Contrasena = credencial.Contrasena,
+                Estado = credencial.Estado,
+                UsuarioRegistro = User?.Identity?.Name // Usuario actual
+            };
+
+            // Pasamos el ID original a la vista mediante ViewBag para referencia
+            ViewBag.CredencialOriginalId = id;
+
+            return View("Clonar", credencialClon);
+        }
+
+        // POST: Credenciales/GuardarClon
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> GuardarClon(Credencial credencial)
+        {
+            if (ModelState.IsValid)
+            {
+                // Verificar si ya existe una credencial con el mismo CodigoEquipo y CodigoUsuarioEcar
+                bool existeCredencial = await _context.Credenciales
+                    .AnyAsync(c => c.CodigoEquipo == credencial.CodigoEquipo &&
+                                  c.CodigoUsuarioEcar == credencial.CodigoUsuarioEcar);
+
+                if (existeCredencial)
+                {
+                    // Si existe un registro duplicado, agregar un error al ModelState
+                    ModelState.AddModelError(string.Empty,
+                        $"Ya existe un registro para el usuario {credencial.CodigoUsuarioEcar} en el equipo {credencial.CodigoEquipo}.");
+                    return View("Clonar", credencial);
+                }
+
+                // Aseguramos que estamos creando un nuevo registro
+                credencial.Id = 0;
+                credencial.FechaYHora = DateTime.Now;
+
+                _context.Add(credencial);
+                await _context.SaveChangesAsync();
+
+                // Redirigir al índice con un mensaje de éxito
+                TempData["SuccessMessage"] = "La credencial se ha clonado correctamente.";
+                return RedirectToAction(nameof(Index));
+            }
+
+            // Si el modelo no es válido, vuelve a mostrar el formulario con los errores
+            return View("Clonar", credencial);
+        }
 
 
     }

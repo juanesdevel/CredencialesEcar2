@@ -196,8 +196,8 @@ namespace ECARTemplate.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // GET: Equipos/Inactivar/5
-        public async Task<IActionResult> Inactivar(int? id)
+        // GET: Equipos/Desactivar/5
+        public async Task<IActionResult> Desactivar(int? id)
         {
             if (id == null)
             {

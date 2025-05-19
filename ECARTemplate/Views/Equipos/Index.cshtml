@@ -20,14 +20,15 @@
                     <thead>
                         <tr>
                             <th class="px-0">
+                                <h4><strong>Estado</strong></h4>
+                            </th>
+                            <th class="px-0">
                                 <h4><strong>Código</strong></h4>
                             </th>
                             <th class="px-0">
                                 <h4><strong>Nombre</strong></h4>
                             </th>
-                            <th class="px-0">
-                                <h4><strong>Estado</strong></h4>
-                            </th>
+                            
                             <th class="px-0">
                                 <h4><strong>Acciones</strong></h4>
                             </th>
@@ -37,15 +38,27 @@
                         @foreach (var item in Model)
                         {
                             <tr>
+                                <td>
+                                    @if (item.Estado == "Activo")
+                                    {
+                                        <span class="badge bg-success">Activo</span>
+                                    }
+                                    else if (item.Estado == "Inactivo")
+                                    {
+                                        <span class="badge bg-secondary">Inactivo</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge bg-danger">Desconocido</span>
+                                    }
+                                </td>
                                 <td class="px-1">
                                    @Html.DisplayFor(modelItem => item.CodigoEquipo)
                                 </td>
                                 <td class="px-1">
                                     @Html.DisplayFor(modelItem => item.NombreEquipo)
                                 </td>
-                                <td class="px-1">
-                                    @Html.DisplayFor(modelItem => item.Estado)
-                                </td>
+                        
                                 <td class="px-1">
                                     <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Editar</a> |
                                     <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Detalles</a> |
