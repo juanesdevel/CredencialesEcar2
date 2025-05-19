@@ -16,18 +16,16 @@
             ],
             "items": [
                 {
-              
-                
                     "href": "/Home",
                     "icon": "fal fa-desktop",
                     "roles": [],
                     "title": "Inicio"
                 },
                 {
-                    "href": "/Equipos",
+                    "href": "/Credenciales",
                     "icon": "fal fa-desktop",
                     "roles": [],
-                    "title": "Gestión de Equipos"
+                    "title": "Gestión de Credenciales"
                 },
                 {
                     "href": "/Empleados",
@@ -36,10 +34,10 @@
                     "title": "Gestión de Empleados"
                 },
                 {
-                    "href": "/Credenciales",
+                    "href": "/Equipos",
                     "icon": "fal fa-desktop",
                     "roles": [],
-                    "title": "Gestión de Credenciales"
+                    "title": "Gestión de Equipos"
                 },
                 {
                     "href": "/UsuariosTI",

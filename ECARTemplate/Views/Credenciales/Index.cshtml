@@ -3,9 +3,10 @@
 @{
     ViewData["Title"] = "Index";
 }
-
-<h1>Credenciales</h1>
-
+<div fa-computer-classic="text-center">
+    <h1 class="display-4">Credenciales</h1>
+    <p class="lead">Lista de Credenciales</p>
+</div>
 <p>
     <a class="btn btn-success btn-sm" asp-action="Create">Crear Nuevo</a>
 </p>
@@ -92,9 +93,6 @@
 				<h4>Código Equipo</h4>
             </th>
             <th>
-				<h4>Fecha y Hora</h4>
-            </th>
-            <th>
 				<h4>Código Usuario</h4>
             </th>
             <th>
@@ -121,10 +119,7 @@
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.CodigoEquipo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FechaYHora)
-                </td>
+                </td>               
                 <td>
                     @Html.DisplayFor(modelItem => item.CodigoUsuarioEcar)
                 </td>

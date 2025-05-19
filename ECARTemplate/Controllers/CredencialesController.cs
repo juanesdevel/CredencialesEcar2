@@ -122,6 +122,19 @@ namespace ECARTemplate.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Verificar si ya existe una credencial con el mismo CodigoEquipo y CodigoUsuarioEcar
+                bool existeCredencial = await _context.Credenciales
+                    .AnyAsync(c => c.CodigoEquipo == credencial.CodigoEquipo &&
+                                   c.CodigoUsuarioEcar == credencial.CodigoUsuarioEcar);
+
+                if (existeCredencial)
+                {
+                    // Si existe un registro duplicado, agregar un error al ModelState
+                    ModelState.AddModelError(string.Empty,
+                        $"Ya existe un registro para el usuario {credencial.CodigoUsuarioEcar} en el equipo {credencial.CodigoEquipo}.");
+                    return View(credencial);
+                }
+
                 _context.Add(credencial);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

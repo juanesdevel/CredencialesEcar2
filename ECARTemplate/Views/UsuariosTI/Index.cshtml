@@ -3,13 +3,17 @@
 @{
     ViewData["Title"] = "Usuarios TI";
 }
+<div fa-computer-classic="text-center">
+    <h1 class="display-4">Usuarios</h1>
+    <p class="lead">Lista de Usuarios</p>
+</div>
 
-<h1>Usuarios TI</h1>
-
-<p>
-    <a asp-action="Create" class="btn btn-success btn-sm">Crear Nuevo</a>
+<p class="mx-5 mb-3">
+    <a class="btn btn-success btn-sm" asp-action="Create">Crear Nuevo</a>
 </p>
-<table class="table">
+
+<div class="mx-5">
+    <table class="table" style="font-size: 1.0em;">
     <thead>
         <tr>
             <th>
@@ -47,3 +51,4 @@
         }
     </tbody>
 </table>
+</div>

@@ -3,73 +3,76 @@
 @{
     ViewData["Title"] = "Index";
 }
-<h1>Empleados ECAR</h1>
+<div fa-computer-classic="text-center">
+	<h1 class="display-4">Empleados</h1>
+	<p class="lead">Lista de Empleados</p>
+</div>
 
-
-<p>
+<p class="mx-5  mb-3">
     <a asp-action="Create" class="btn btn-success btn-sm">Crear Nuevo</a>
     <button onclick="location.reload();" class="btn btn-primary btn-sm">Mostrar todos</button>
 </p>
 
-<div class="form-group">
-    <label for="searchString" class="control-label">Buscar:</label>
-    <input type="text" id="searchString" name="searchString" class="form-control" placeholder="Buscar por Código o Nombre" value="@ViewData["CurrentFilter"]" />
-    <div id="resultadosBusqueda">
-        <table class="table px-0">
-            <thead>
-                <tr>
-                    <th>
-                        <h4>Código</h4>
-                    </th>
-                    <th>
-                        <h4>Nombre</h4>
-                    </th>
-                    <th>
-                        <h4>Firma BPM</h4>
-                    </th>
-                    <th>
-                        <h4>Estado</h4>
-                    </th>
-                    <th>
-                        <h4>Acciones</h4>
-                    </th>
-                </tr>
-            </thead>
-            <tbody id="tablaEmpleadosBody">
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.CodigoEmpleadoEcar)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.NombreEmpleado)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.FirmaBpm)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Estado)
-                        </td>
-                        <td>
-                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Editar</a> |
-                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Detalles</a> |
-                            @if (item.Estado == "Activo")
-                            {
-                                <a asp-action="Desactivar" asp-route-id="@item.Id" class="btn btn-secondary btn-sm">Inactivar</a>
-                            }
-                            else
-                            {
-                                <a asp-action="Activar" asp-route-id="@item.Id" class="btn btn-success btn-sm">Activar</a>
-                            }
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+    <div class="mx-5">
+        <input type="text" id="searchString" name="searchString" class="form-control" placeholder="Buscar por Código o Nombre" value="@ViewData["CurrentFilter"]" />
     </div>
-</div>
-
+    <div class="mx-5">
+        <div id="resultadosBusqueda">
+            <!-- Aquí se mostrarán los resultados de la búsqueda -->
+            <table class="table" style="font-size: 1.0em;">
+                <thead>
+                    <tr>
+                        <th>
+                            <h4>Código</h4>
+                        </th>
+                        <th>
+                            <h4>Nombre</h4>
+                        </th>
+                        <th>
+                            <h4>Firma BPM</h4>
+                        </th>
+                        <th>
+                            <h4>Estado</h4>
+                        </th>
+                        <th>
+                            <h4>Acciones</h4>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="tablaEmpleadosBody">
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CodigoEmpleadoEcar)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.NombreEmpleado)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FirmaBpm)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Estado)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Editar</a> |
+                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-warning btn-sm">Detalles</a> |
+                                @if (item.Estado == "Activo")
+                                {
+                                    <a asp-action="Desactivar" asp-route-id="@item.Id" class="btn btn-secondary btn-sm">Inactivar</a>
+                                }
+                                else
+                                {
+                                    <a asp-action="Activar" asp-route-id="@item.Id" class="btn btn-success btn-sm">Activar</a>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
 @section ScriptsBlock {
     <script>
         $(document).ready(function () {
