@@ -67,33 +67,33 @@
                             <span asp-validation-for="Perfil" class="text-danger"></span>
                         </div>
                         <div class="mb-2 mt-0">
-                            <label asp-for="Contrasena" class="control-label"></label>
-                            <input asp-for="Contrasena" class="form-control" />
+                            <label asp-for="Contrasena" class="control-label">Contraseña</label>
+                            <input asp-for="Contrasena" class="form-control" id="Contrasena" />
                             <span asp-validation-for="Contrasena" class="text-danger"></span>
                         </div>
                         <div class="mb-2 mt-0">
-                            <label asp-for="Estado" class="control-label" hidden>Estado</label>
-                            <input asp-for="Estado" class="form-control" readonly hidden />
+                            <label asp-for="Estado" class="control-label" hidden></label>
+                            <input asp-for="Estado" class="form-control" value="Activo" readonly hidden />
                             <span asp-validation-for="Estado" class="text-danger"></span>
                         </div>
 
                         <div class="mb-2 mt-0">
-                            <label asp-for="CodigoEquipo" class="control-label">Código de Equipo</label>
-                            <input asp-for="CodigoEquipo" class="form-control" placeholder="Código del equipo" readonly />
+                            <label asp-for="CodigoEquipo" class="control-label">Asignar al Equipo o Software</label>
+                            <input asp-for="CodigoEquipo" class="form-control" placeholder="Código" readonly />
                             <span asp-validation-for="CodigoEquipo" class="text-danger"></span>
                         </div>
                        
                         <hr class="mb-2" />
                         <div class="mb-2 mt-0">
-                            <label for="BuscarReferenciaEquipo" class="control-label">Buscar Código Equipo</label>
+                            <label for="BuscarReferenciaEquipo" class="control-label">Buscar Código Equipo / Software</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Ingrese Referencia a buscar" id="BuscarReferenciaEquipo" />
+                                <input type="text" class="form-control" placeholder="Ingrese Código a buscar" id="BuscarReferenciaEquipo" />
                                 <button type="button" id="btnBuscarReferenciaEquipo" class="btn btn-outline-primary btn-sm ms-2">Buscar</button>
                             </div>
                         </div>
                       
                         <div class="form-group text-center mt-4">
-                            <button type="submit" class="btn btn-primary">Guardar Clon</button>
+                            <button type="submit" class="btn btn-success">Guardar Clon</button>
                             <a asp-action="Index" class="btn btn-secondary ms-2">Volver a la Lista</a>
                         </div>
                     </form>
@@ -105,6 +105,27 @@
 
 @section ScriptsBlock {
     <script>
+          $(document).ready(function() {
+            // Función para generar una contraseña de 6 números aleatorios
+            function generarContrasenaAleatoria() {
+                let contrasena = '';
+                for (let i = 0; i < 6; i++) {
+                    contrasena += Math.floor(Math.random() * 10); // Genera un número aleatorio entre 0 y 9
+                }
+                return contrasena;
+            }
+
+            // Agregar un botón para generar la contraseña si no existe
+            if (!$('#generarContrasenaBtn').length) {
+                $('#Contrasena').after('<button type="button" id="generarContrasenaBtn" class="btn btn-outline-info btn-sm ms-2">Generar Contraseña</button>');
+            }
+
+            // Evento click del botón para generar la contraseña
+            $('#generarContrasenaBtn').click(function() {
+                const nuevaContrasena = generarContrasenaAleatoria();
+                $('#Contrasena').val(nuevaContrasena);
+            });
+        });
         // Función para formatear la fecha y hora en formato compatible con input datetime-local
         function obtenerFechaHoraFormateada() {
             const ahora = new Date();

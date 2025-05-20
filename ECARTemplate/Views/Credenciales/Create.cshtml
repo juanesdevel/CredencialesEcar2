@@ -57,34 +57,31 @@
                             <span asp-validation-for="Perfil" class="text-danger"></span>
                         </div>
                         <div class="mb-2 mt-0">
-                            <label asp-for="Contrasena" class="control-label"></label>
-                            <input asp-for="Contrasena" class="form-control" placeholder="Generar Contraseña" />
+                            <label asp-for="Contrasena" class="control-label">Contraseña</label>
+                            <input asp-for="Contrasena" class="form-control" id="Contrasena" placeholder="Generar Contraseña" />
                             <span asp-validation-for="Contrasena" class="text-danger"></span>
                         </div>
                         <div class="mb-2 mt-0">
-                            <label asp-for="Estado" class="control-label">Estado</label>
-                            <select asp-for="Estado" class="form-control">
-                                <option value="Activo">Activo</option>
-                                <option value="Inactivo">Inactivo</option>
-                            </select>
+                            <label asp-for="Estado" class="control-label" hidden></label>
+                            <input asp-for="Estado" class="form-control" value="Activo" readonly hidden />
                             <span asp-validation-for="Estado" class="text-danger"></span>
                         </div>
 
                         <div class="mb-2 mt-0">
-                            <label asp-for="UsuarioRegistro" class="control-label"></label>
-                            <input asp-for="UsuarioRegistro" class="form-control" readonly value="@User?.Identity?.Name" />
+                            <label asp-for="UsuarioRegistro" class="control-label" hidden></label>
+                            <input asp-for="UsuarioRegistro" class="form-control" readonly hidden value="@User?.Identity?.Name" />
                             <span asp-validation-for="UsuarioRegistro" class="text-danger"></span>
                         </div>
 
                         <div class="mb-2 mt-0">
-                            <label asp-for="CodigoEquipo" class="control-label">Código de Equipo</label>
-                            <input asp-for="CodigoEquipo" class="form-control" placeholder="Códigos de Equipos" readonly />
+                            <label asp-for="CodigoEquipo" class="control-label">Asignar al Equipo o Software</label>
+                            <input asp-for="CodigoEquipo" class="form-control" placeholder="Código" readonly />
                             <span asp-validation-for="CodigoEquipo" class="text-danger"></span>
                         </div>
                        
                         <hr class="mb-2" />
                         <div class="mb-2 mt-0">
-                            <label for="BuscarReferenciaEquipo" class="control-label">Buscar Código Equipo</label>
+                            <label for="BuscarReferenciaEquipo" class="control-label">Buscar Código Equipo / software</label>
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Ingrese Referencia a buscar" id="BuscarReferenciaEquipo" />
                                 <button type="button" id="btnBuscarReferenciaEquipo" class="btn btn-outline-primary btn-sm ms-2">Buscar</button>
@@ -92,7 +89,7 @@
                         </div>
                       
                         <div class="form-group text-center mt-4">
-                            <button type="submit" class="btn btn-primary">Crear</button>
+                            <button type="submit" class="btn btn-success">Crear</button>
                             <a asp-action="Index" class="btn btn-secondary ms-2">Volver a la Lista</a>
                         </div>
                     </form>
@@ -103,6 +100,27 @@
 </div>
 @section ScriptsBlock {
     <script>
+                $(document).ready(function() {
+            // Función para generar una contraseña de 6 números aleatorios
+            function generarContrasenaAleatoria() {
+                let contrasena = '';
+                for (let i = 0; i < 6; i++) {
+                    contrasena += Math.floor(Math.random() * 10); // Genera un número aleatorio entre 0 y 9
+                }
+                return contrasena;
+            }
+
+            // Agregar un botón para generar la contraseña si no existe
+            if (!$('#generarContrasenaBtn').length) {
+                $('#Contrasena').after('<button type="button" id="generarContrasenaBtn" class="btn btn-outline-info btn-sm ms-2">Generar Contraseña</button>');
+            }
+
+            // Evento click del botón para generar la contraseña
+            $('#generarContrasenaBtn').click(function() {
+                const nuevaContrasena = generarContrasenaAleatoria();
+                $('#Contrasena').val(nuevaContrasena);
+            });
+        });
                            $(document).ready(function() {
             // 1. Agregar el botón "Buscar" dinámicamente después del campo CodigoUsuarioEcarBusqueda
             $('#CodigoUsuarioEcarBusqueda').after('<button type="button" id="btnBuscarUsuario" class="btn btn-outline-primary btn-sm ms-2">Buscar</button>');
