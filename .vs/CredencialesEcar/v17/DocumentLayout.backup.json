@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|c:\\users\\juan g\\desktop\\credencialesecar\\ecartemplate\\controllers\\empleadoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|solutionrelative:ecartemplate\\controllers\\empleadoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|c:\\users\\juan g\\desktop\\credencialesecar\\ecartemplate\\views\\empleados\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|solutionrelative:ecartemplate\\views\\empleados\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|c:\\users\\juan g\\desktop\\credencialesecar\\ecartemplate\\controllers\\equiposcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|solutionrelative:ecartemplate\\controllers\\equiposcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|c:\\users\\juan g\\desktop\\credencialesecar\\ecartemplate\\controllers\\empleadoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|solutionrelative:ecartemplate\\controllers\\empleadoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|c:\\users\\juan g\\desktop\\credencialesecar\\ecartemplate\\views\\empleados\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -42,11 +42,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Views\\Empleados\\Index.cshtml",
               "RelativeDocumentMoniker": "ECARTemplate\\Views\\Empleados\\Index.cshtml",
@@ -54,8 +54,7 @@
               "RelativeToolTip": "ECARTemplate\\Views\\Empleados\\Index.cshtml",
               "ViewState": "AgIAAE4AAAAAAAAAAAAAAHEAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-13T15:50:16.115Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-13T15:50:16.115Z"
             },
             {
               "$type": "Document",
@@ -67,12 +66,11 @@
               "RelativeToolTip": "ECARTemplate\\Startup.cs",
               "ViewState": "AgIAAF8AAAAAAAAAAAAUwHMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T15:29:09.725Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-13T15:29:09.725Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "EquiposController.cs",
               "DocumentMoniker": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Controllers\\EquiposController.cs",
               "RelativeDocumentMoniker": "ECARTemplate\\Controllers\\EquiposController.cs",
@@ -80,8 +78,7 @@
               "RelativeToolTip": "ECARTemplate\\Controllers\\EquiposController.cs",
               "ViewState": "AgIAAMUAAAAAAAAAAAAowIkAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T15:09:13.96Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-13T15:09:13.96Z"
             },
             {
               "$type": "Document",
@@ -93,8 +90,7 @@
               "RelativeToolTip": "ECARTemplate\\Views\\Empleados\\Edit.cshtml",
               "ViewState": "AgIAAFUAAAAAAAAAAAAAAF4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-13T14:54:12.524Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-13T14:54:12.524Z"
             },
             {
               "$type": "Document",
@@ -106,18 +102,17 @@
               "RelativeToolTip": "ECARTemplate\\Views\\Empleados\\Details.cshtml",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAEYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-13T14:53:45.192Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-13T14:53:45.192Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "EmpleadosController.cs",
               "DocumentMoniker": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Controllers\\EmpleadosController.cs",
               "RelativeDocumentMoniker": "ECARTemplate\\Controllers\\EmpleadosController.cs",
               "ToolTip": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Controllers\\EmpleadosController.cs",
               "RelativeToolTip": "ECARTemplate\\Controllers\\EmpleadosController.cs",
-              "ViewState": "AgIAAMsAAAAAAAAAAAAswOEAAABIAAAAAAAAAA==",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAhwO8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-13T14:51:11.38Z",
               "EditorCaption": ""
@@ -132,12 +127,11 @@
               "RelativeToolTip": "ECARTemplate\\Models\\Empleado.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-13T14:50:23.06Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-13T14:50:23.06Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\Juan G\\Desktop\\CredencialesEcar\\ECARTemplate\\Views\\Empleados\\Create.cshtml",
               "RelativeDocumentMoniker": "ECARTemplate\\Views\\Empleados\\Create.cshtml",
