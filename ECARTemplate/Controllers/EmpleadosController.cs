@@ -123,7 +123,7 @@ namespace ECARTemplate.Controllers
         // POST: Empleados/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,CodigoEmpleadoEcar,Fecha,NombreEmpleado,Cargo,Area,SubArea,Nota,Estado,UsuarioRegistro,FechaModificacion,FIrmaBpm")] Empleado empleado) // Cambiado a Empleado
+        public async Task<IActionResult> Create([Bind("Id,CodigoEmpleadoEcar,Fecha,NombreEmpleado,Cargo,Area,SubArea,Nota,Estado,UsuarioRegistro,FirmaBpm")] Empleado empleado) // Cambiado a Empleado
         {
             if (ModelState.IsValid)
             {
@@ -153,7 +153,7 @@ namespace ECARTemplate.Controllers
         // POST: Empleados/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,CodigoEmpleadoEcar,Fecha,NombreEmpleado,Cargo,Area,SubArea,Nota,Estado,UsuarioRegistro,FechaModificacion,FIrmaBpm")] Empleado empleado) // Cambiado a Empleado
+        public async Task<IActionResult> Edit(int id, [Bind("Id,CodigoEmpleadoEcar,Fecha,NombreEmpleado,Cargo,Area,SubArea,Nota,Estado,UsuarioRegistro,FirmaBpm")] Empleado empleado) // Cambiado a Empleado
         {
             if (id != empleado.Id)
             {

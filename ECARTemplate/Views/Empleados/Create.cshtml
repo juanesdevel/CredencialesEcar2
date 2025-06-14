@@ -18,7 +18,7 @@
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
                         <div class="mb-3">
-                            <label asp-for="CodigoEmpleadoEcar" class="control-label"></label>
+                            <label asp-for="CodigoEmpleadoEcar" class="control-label">Código de Empleado</label>
                             <input asp-for="CodigoEmpleadoEcar" class="form-control" />
                             <span asp-validation-for="CodigoEmpleadoEcar" class="text-danger"></span>
                         </div>
@@ -28,7 +28,7 @@
                             <span asp-validation-for="Fecha" class="text-danger"></span>
                         </div>
                         <div class="mb-3">
-                            <label asp-for="NombreEmpleado" class="control-label"></label>
+                            <label asp-for="NombreEmpleado" class="control-label">Nombre Empleado</label>
                             <input asp-for="NombreEmpleado" class="form-control" />
                             <span asp-validation-for="NombreEmpleado" class="text-danger"></span>
                         </div>
@@ -38,14 +38,19 @@
                             <span asp-validation-for="Cargo" class="text-danger"></span>
                         </div>
                         <div class="mb-3">
-                            <label asp-for="Area" class="control-label"></label>
+                            <label asp-for="Area" class="control-label">Área</label>
                             <input asp-for="Area" class="form-control" />
                             <span asp-validation-for="Area" class="text-danger"></span>
                         </div>
                         <div class="mb-3">
-                            <label asp-for="SubArea" class="control-label"></label>
+                            <label asp-for="SubArea" class="control-label">Sub área</label>
                             <input asp-for="SubArea" class="form-control" />
                             <span asp-validation-for="SubArea" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="FirmaBpm" class="control-label">Firma BPM</label>
+                            <input asp-for="FirmaBpm" class="form-control" value="" />
+                            <span asp-validation-for="FirmaBpm" class="text-danger"></span>
                         </div>
                         <div class="mb-3">
                             <label asp-for="Nota" class="control-label"></label>
@@ -54,25 +59,14 @@
                         </div>
                         <div class="mb-3">
                             <label asp-for="Estado" class="control-label"></label>
-                            <input asp-for="Estado" class="form-control" />
+                            <input asp-for="Estado" class="form-control" value="Activo" readonly />
                             <span asp-validation-for="Estado" class="text-danger"></span>
                         </div>
                         <div class="mb-3">
-                            <label asp-for="UsuarioRegistro" class="control-label"></label>
-                            <input asp-for="UsuarioRegistro" class="form-control" />
+                            <label asp-for="UsuarioRegistro" class="control-label">Usuario de registro</label>
+                            <input asp-for="UsuarioRegistro" class="form-control" value="@User?.Identity?.Name" readonly />
                             <span asp-validation-for="UsuarioRegistro" class="text-danger"></span>
                         </div>
-                        <div class="mb-3">
-                            <label asp-for="FirmaBpm" class="control-label"></label>
-                            <input asp-for="FirmaBpm" class="form-control" />
-                            <span asp-validation-for="FirmaBpm" class="text-danger"></span>
-                        </div>
-                        <div class="mb-3">
-                            <label asp-for="FechaModificacion" class="control-label"></label>
-                            <input asp-for="FechaModificacion" class="form-control" />
-                            <span asp-validation-for="FechaModificacion" class="text-danger"></span>
-                        </div>
-
                         <div class="form-group text-center mt-4">
                             <button type="submit" class="btn btn-primary">Crear</button>
                             <a asp-action="Index" class="btn btn-secondary ms-2">Volver a la Lista</a>
@@ -84,8 +78,47 @@
     </div>
 </div>
 
-@section ScriptsBlock {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+
+   @section ScriptsBlock {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const nombreInput = document.querySelector("input[name='NombreEmpleado']");
+            const firmaInput = document.querySelector("input[name='FirmaBpm']");
+
+            nombreInput.addEventListener("input", function () {
+                const valor = nombreInput.value.trim().toLowerCase();
+
+                if (valor.length === 0) {
+                    firmaInput.value = "";
+                    return;
+                }
+
+                const partes = valor.split(/\s+/);
+                if (partes.length < 2) {
+                    firmaInput.value = partes[0]; // solo nombre
+                    return;
+                }
+
+                const primerNombre = partes[0];
+                const posiblesApellidos = partes.slice(1);
+
+                let inicialesApellidos = "";
+
+                if (posiblesApellidos.length >= 2) {
+                    // Toma los dos últimos como apellidos
+                    const primerApellido = posiblesApellidos[posiblesApellidos.length - 2];
+                    const segundoApellido = posiblesApellidos[posiblesApellidos.length - 1];
+                    inicialesApellidos = primerApellido[0] + segundoApellido[0];
+                } else {
+                    // Solo un apellido
+                    inicialesApellidos = posiblesApellidos[0][0];
+                }
+
+                firmaInput.value = primerNombre + inicialesApellidos;
+            });
+        });
+    </script>
 }
+

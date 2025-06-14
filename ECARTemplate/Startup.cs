@@ -101,11 +101,15 @@ namespace ECARTemplate
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Page}/{action=Login}"); // Ruta predeterminada para el inicio
+                    pattern: "{controller=Page}/{action=Login}");
 
                 endpoints.MapControllerRoute(
                     name: "Admin",
-                    pattern: "{controller=Admin}/{action=Index}/{id?}"); // Ruta para el AdminController
+                    pattern: "{controller=Admin}/{action=Index}"); // Sin {id?}
+
+                endpoints.MapControllerRoute(
+                    name: "empleados",
+                    pattern: "{controller=Empleados}/{action=Details}"); // también sin {id?}
 
                 endpoints.MapRazorPages();
             });

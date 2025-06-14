@@ -142,39 +142,39 @@ namespace ECARTemplate.Controllers
             return View(equipo);
         }
 
-        // GET: Equipos/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+        //GET: Equipos/Delete/5
+        //public async Task<IActionResult> Delete(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            var equipo = await _context.Equipos
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (equipo == null)
-            {
-                return NotFound();
-            }
+        //    var equipo = await _context.Equipos
+        //        .FirstOrDefaultAsync(m => m.Id == id);
+        //    if (equipo == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return View(equipo);
-        }
+        //    return View(equipo);
+        //}
 
-        // POST: Equipos/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var equipo = await _context.Equipos.FindAsync(id);
-            _context.Equipos.Remove(equipo);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
+        //POST: Equipos/Delete/5
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> DeleteConfirmed(int id)
+        //{
+        //    var equipo = await _context.Equipos.FindAsync(id);
+        //    _context.Equipos.Remove(equipo);
+        //    await _context.SaveChangesAsync();
+        //    return RedirectToAction(nameof(Index));
+        //}
 
-        private bool EquipoExists(int id)
-        {
-            return _context.Equipos.Any(e => e.Id == id);
-        }
+        //private bool EquipoExists(int id)
+        //{
+        //    return _context.Equipos.Any(e => e.Id == id);
+        //}
 
         // GET: Equipos/Activar/5
         public async Task<IActionResult> Activar(int? id)
@@ -251,6 +251,11 @@ namespace ECARTemplate.Controllers
                 // Si no existe, devolver un mensaje
                 return Json(new { existe = false, mensaje = "No se encontró ningún equipo con el código especificado." });
             }
+        }
+        // Add the EquipoExists method to resolve the CS0103 error
+        private bool EquipoExists(int id)
+        {
+            return _context.Equipos.Any(e => e.Id == id);
         }
 
     }

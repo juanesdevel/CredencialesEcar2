@@ -93,30 +93,33 @@
                 $.ajax({
                     url: '@Url.Action("BuscarEmpleados", "Empleados")',
                     type: 'GET',
-                    data: { term: searchString }, // Cambiado a 'term' para coincidir con la acción del controlador
+                    data: { term: searchString },
                     success: function (data) {
-        var resultadosHTML = '<table class="table"><thead><tr><th><h4>Código</h4></th><th><h4>Nombre</h4></th><th><h4>Firma BPM</h4></th><th><h4>Estado</h4></th><th><h4>Acción</h4></th></tr></thead><tbody>';
-                                if (data && data.length > 0) {
+                        var resultadosHTML = '<table class="table"><thead><tr><th><h4>Código</h4></th><th><h4>Nombre</h4></th><th><h4>Firma BPM</h4></th><th><h4>Estado</h4></th><th><h4>Acción</h4></th></tr></thead><tbody>';
+
+                        if (data && data.length > 0) {
                             $.each(data, function (i, empleado) {
                                 resultadosHTML += '<tr>' +
                                     '<td>' + empleado.codigoEmpleadoEcar + '</td>' +
                                     '<td>' + empleado.nombreEmpleado + '</td>' +
                                     '<td>' + empleado.firmaBpm + '</td>' +
                                     '<td>' + empleado.estado + '</td>' +
-                                    '<td>' +    
-                                  '<a href="/Empleado/Edit/' + empleado.id + '" class="btn btn-primary btn-sm">Editar</a> | ' +
-                                    '<a href="/Empleado/Details/' + empleado.id + '" class="btn btn-warning btn-sm">Detalles</a> | ' +
-                                     (empleado.estado == "Activo"
-                                        ? '<a href="/Empleado/Desactivar/' + empleado.id + '" class="btn btn-secondary btn-sm">Inactivar</a>'
-                                        : '<a href="/Empleado/Activar/' + empleado.id + '" class="btn btn-success btn-sm">Activar</a>'
-                                    ) +
+                                    '<td>' +
+                                        '<a href="/Empleados/Edit?id=' + empleado.id + '" class="btn btn-primary btn-sm">Editar</a> | ' +
+                                        '<a href="/Empleados/Details?id=' + empleado.id + '" class="btn btn-warning btn-sm">Detalles</a> | ' +
+                                        (empleado.estado === "Activo"
+                                            ? '<a href="/Empleados/Desactivar?id=' + empleado.id + '" class="btn btn-secondary btn-sm">Inactivar</a>'
+                                            : '<a href="/Empleados/Activar?id=' + empleado.id + '" class="btn btn-success btn-sm">Activar</a>'
+                                        ) +
+                                    '</td>' +
                                     '</tr>';
                             });
                         } else {
-                            resultadosHTML += '<tr><td colspan="5">No se encontraron resultados</td></tr>'; // Mensaje si no hay resultados
+                            resultadosHTML += '<tr><td colspan="5">No se encontraron resultados</td></tr>';
                         }
-                        resultadosHTML += '</tbody></table>'; // Cierre de la tabla
-                        $('#resultadosBusqueda').html(resultadosHTML); // Actualiza el contenido del div
+
+                        resultadosHTML += '</tbody></table>';
+                        $('#resultadosBusqueda').html(resultadosHTML);
                     },
                     error: function (error) {
                         console.error('Error al realizar la búsqueda:', error);

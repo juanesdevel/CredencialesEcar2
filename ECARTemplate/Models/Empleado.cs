@@ -53,10 +53,6 @@ namespace ECARTemplate.Models
         [StringLength(255)]
         public string UsuarioRegistro { get; set; }
 
-        [Column("fecha_modificacion")]
-        [DataType(DataType.DateTime)]
-        public DateTime? FechaModificacion { get; set; }
-
         [Column("firma_bpm")]
         [Required]
         [StringLength(20)]
