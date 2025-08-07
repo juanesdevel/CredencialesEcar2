@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|solutionrelative:ecartemplate\\views\\credenciales\\clonar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|c:\\users\\jegallego\\desktop\\credencialesecar\\ecartemplate\\views\\credenciales\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|solutionrelative:ecartemplate\\views\\credenciales\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|c:\\users\\jegallego\\desktop\\credencialesecar\\ecartemplate\\views\\credenciales\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{52722178-0138-4B74-B84B-D1F6F5BEFEE6}|ECARTemplate\\ECARTemplate.csproj|solutionrelative:ecartemplate\\views\\credenciales\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -30,11 +34,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\jegallego\\Desktop\\CredencialesEcar\\ECARTemplate\\Views\\Credenciales\\Index.cshtml",
+              "RelativeDocumentMoniker": "ECARTemplate\\Views\\Credenciales\\Index.cshtml",
+              "ToolTip": "C:\\Users\\jegallego\\Desktop\\CredencialesEcar\\ECARTemplate\\Views\\Credenciales\\Index.cshtml",
+              "RelativeToolTip": "ECARTemplate\\Views\\Credenciales\\Index.cshtml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-07T19:01:44.09Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -44,14 +61,14 @@
               "RelativeDocumentMoniker": "ECARTemplate\\Views\\Credenciales\\Clonar.cshtml",
               "ToolTip": "C:\\Users\\jegallego\\Desktop\\CredencialesEcar\\ECARTemplate\\Views\\Credenciales\\Clonar.cshtml",
               "RelativeToolTip": "ECARTemplate\\Views\\Credenciales\\Clonar.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAACwAAABsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-08-06T00:30:21.143Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\jegallego\\Desktop\\CredencialesEcar\\ECARTemplate\\Views\\Credenciales\\Edit.cshtml",
               "RelativeDocumentMoniker": "ECARTemplate\\Views\\Credenciales\\Edit.cshtml",
@@ -63,7 +80,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CredencialesController.cs",
               "DocumentMoniker": "C:\\Users\\jegallego\\Desktop\\CredencialesEcar\\ECARTemplate\\Controllers\\CredencialesController.cs",
               "RelativeDocumentMoniker": "ECARTemplate\\Controllers\\CredencialesController.cs",
@@ -75,7 +92,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\jegallego\\Desktop\\CredencialesEcar\\ECARTemplate\\Views\\Credenciales\\Details.cshtml",
               "RelativeDocumentMoniker": "ECARTemplate\\Views\\Credenciales\\Details.cshtml",
@@ -87,7 +104,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "AesEncryptor.cs",
               "DocumentMoniker": "C:\\Users\\jegallego\\Desktop\\CredencialesEcar\\ECARTemplate\\Service\\AesEncryptor.cs",
               "RelativeDocumentMoniker": "ECARTemplate\\Service\\AesEncryptor.cs",

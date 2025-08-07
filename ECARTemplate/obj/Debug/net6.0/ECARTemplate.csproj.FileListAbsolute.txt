@@ -986,3 +986,4 @@ C:\Users\tecnologia\Documents\CredencialesEcar\ECARTemplate\obj\Debug\net6.0\ref
 C:\Users\tecnologia\Documents\CredencialesEcar\ECARTemplate\obj\Debug\net6.0\ECARTemplate.pdb
 C:\Users\tecnologia\Documents\CredencialesEcar\ECARTemplate\obj\Debug\net6.0\ECARTemplate.genruntimeconfig.cache
 C:\Users\tecnologia\Documents\CredencialesEcar\ECARTemplate\obj\Debug\net6.0\ref\ECARTemplate.dll
+C:\Users\jegallego\Desktop\CredencialesEcar\ECARTemplate\obj\Debug\net6.0\ECARTemplate.sourcelink.json
