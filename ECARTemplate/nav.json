@@ -1,0 +1,52 @@
+{
+    "version": "4.5",
+    "lists": [
+        {
+            "title": "Opciones de Usuario",
+            "roles": [
+
+            ]
+        },
+        {
+            "title": "Módulos",
+            "href": "#",
+            "icon": "fal fa-desktop",
+            "roles": [
+                "Custom"
+            ],
+            "items": [
+                {
+                    "href": "/Home",
+                    "icon": "fal fa-desktop",
+                    "roles": [],
+                    "title": "Inicio"
+                },
+                {
+                    "href": "/Credenciales",
+                    "icon": "fal fa-desktop",
+                    "roles": [],
+                    "title": "Gestión de Credenciales"
+                },
+                {
+                    "href": "/Empleados",
+                    "icon": "fal fa-desktop",
+                    "roles": [],
+                    "title": "Gestión de Empleados"
+                },
+                {
+                    "href": "/Equipos",
+                    "icon": "fal fa-desktop",
+                    "roles": [],
+                    "title": "Gestión de Equipos"
+                },
+                {
+                    "href": "/UsuariosTI",
+                    "icon": "fal fa-desktop",
+                    "roles": [],
+                    "title": "Usuarios"
+                }
+
+            ]
+        }
+    ]
+}

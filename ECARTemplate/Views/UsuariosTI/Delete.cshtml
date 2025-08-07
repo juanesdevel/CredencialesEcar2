@@ -1,0 +1,40 @@
+﻿@model ECARTemplate.Models.UsuarioTI
+
+@{
+    ViewData["Title"] = "Eliminar Usuario TI";
+}
+
+<h1>Eliminar Usuario</h1>
+
+<h3>¿Estás seguro de que quieres eliminar este usuario?</h3>
+<div>
+    <h4>Usuario TI</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NombreUsuario)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NombreUsuario)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Usuario)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Usuario)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RolUsuario)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RolUsuario)
+        </dd>
+        @* La contraseña no se muestra aquí por seguridad *@
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>

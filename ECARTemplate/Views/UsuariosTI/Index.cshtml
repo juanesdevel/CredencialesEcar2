@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ECARTemplate.Models.UsuarioTI>
+
+@{
+    ViewData["Title"] = "Usuarios TI";
+}
+<div fa-computer-classic="text-center">
+    <h1 class="display-4">Usuarios</h1>
+</div>
+
+<p class="mx-5 mb-3">
+    <a class="btn btn-success btn-sm" asp-action="Create">Crear Nuevo</a>
+</p>
+<p class="lead">Lista de Usuarios</p>
+
+<div class="mx-5">
+    <table class="table" style="font-size: 1.0em;">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Usuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RolUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreUsuario)
+            </th>
+           
+            <th>Acción</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Usuario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RolUsuario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreUsuario)
+                </td>
+                
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>
